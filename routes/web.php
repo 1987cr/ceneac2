@@ -22,4 +22,5 @@ Route::group([
 ], function() {
     // your CRUD resources and other admin routes here
     CRUD::resource('categories', 'CategoryCrudController');
+    CRUD::resource('courses', 'CourseCrudController');
 });
