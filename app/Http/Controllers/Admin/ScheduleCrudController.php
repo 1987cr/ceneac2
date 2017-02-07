@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\CourseRequest as StoreRequest;
-use App\Http\Requests\CourseRequest as UpdateRequest;
+use App\Http\Requests\ScheduleRequest as StoreRequest;
+use App\Http\Requests\ScheduleRequest as UpdateRequest;
 
-class CourseCrudController extends CrudController
+class ScheduleCrudController extends CrudController
 {
 
     public function setUp()
@@ -19,9 +19,9 @@ class CourseCrudController extends CrudController
 		| BASIC CRUD INFORMATION
 		|--------------------------------------------------------------------------
 		*/
-        $this->crud->setModel("App\Models\Course");
-        $this->crud->setRoute("admin/courses");
-        $this->crud->setEntityNameStrings('course', 'courses');
+        $this->crud->setModel("App\Models\Schedule");
+        $this->crud->setRoute("admin/schedules");
+        $this->crud->setEntityNameStrings('schedule', 'schedules');
 
         /*
 		|--------------------------------------------------------------------------
@@ -32,26 +32,88 @@ class CourseCrudController extends CrudController
         $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
+        // $this->crud->addField($options, 'update/create/both');
+        // $this->crud->addFields($array_of_arrays, 'update/create/both');
+        // $this->crud->removeField('name', 'update/create/both');
+        // $this->crud->removeFields($array_of_names, 'update/create/both');
+        // ------ CRUD FIELDS
         $this->crud->addField(
         [  // Select
-           'label' => "Category",
+           'label' => "Course",
            'type' => 'select2',
-           'name' => 'category_id', // the db column for the foreign key
+           'name' => 'course_id', // the db column for the foreign key
            'entity' => 'category', // the method that defines the relationship in your Model
            'attribute' => 'name', // foreign key attribute that is shown to user
-           'model' => "App\Models\Category" // foreign key model
+           'model' => "App\Models\Course" // foreign key model
         ], 'update/create/both');
 
         $this->crud->addField(
         [  // Select
-            'name' => 'description',
-            'label' => 'Description',
-            'type' => 'simplemde'
+           'name' => 'start_date',
+           'type' => 'date_picker',
+           'label' => 'Start Date',
+           'value' => date('Y-m-d'),
+           // optional:
+           'date_picker_options' => [
+              'todayBtn' => 'linked',
+              'language' => 'en'
+           ],
         ], 'update/create/both');
-        
-        // $this->crud->addFields($array_of_arrays, 'update/create/both');
-        // $this->crud->removeField('name', 'update/create/both');
-        // $this->crud->removeFields($array_of_names, 'update/create/both');
+
+        $this->crud->addField(
+        [  // Select
+           'name' => 'end_date',
+           'type' => 'date_picker',
+           'label' => 'End Date',
+           'value' => date('Y-m-d'),
+           // optional:
+           'date_picker_options' => [
+              'todayBtn' => 'linked',
+              'language' => 'en'
+           ],
+        ], 'update/create/both');
+
+        $this->crud->addField(
+        [   // Checkbox
+            'name' => 'monday',
+            'label' => 'Monday',
+            'type' => 'checkbox'
+        ], 'update/create/both');
+
+        $this->crud->addField(
+        [   // Checkbox
+            'name' => 'tuesday',
+            'label' => 'Tuesday',
+            'type' => 'checkbox'
+        ], 'update/create/both');
+
+        $this->crud->addField(
+        [   // Checkbox
+            'name' => 'wednesday',
+            'label' => 'Wednesday',
+            'type' => 'checkbox'
+        ], 'update/create/both');
+
+        $this->crud->addField(
+        [   // Checkbox
+            'name' => 'thursday',
+            'label' => 'Thursday',
+            'type' => 'checkbox'
+        ], 'update/create/both');
+
+        $this->crud->addField(
+        [   // Checkbox
+            'name' => 'friday',
+            'label' => 'Friday',
+            'type' => 'checkbox'
+        ], 'update/create/both');
+
+        $this->crud->addField(
+        [   // Checkbox
+            'name' => 'saturday',
+            'label' => 'Saturday',
+            'type' => 'checkbox'
+        ], 'update/create/both');
 
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack

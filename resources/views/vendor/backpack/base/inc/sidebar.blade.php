@@ -22,6 +22,8 @@
 
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
           
+          <li><a href="{{ url('admin/schedules') }}"><i class="fa fa-tag"></i> <span>Manage Schedule</span></a></li>
+
           <!-- Courses -->
           <li class="treeview">
             <a href="#"><i class="fa fa-book"></i> <span>Courses</span> <i class="fa fa-angle-left pull-right"></i></a>
