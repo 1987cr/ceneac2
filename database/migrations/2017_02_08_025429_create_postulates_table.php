@@ -14,8 +14,8 @@ class CreatePostulatesTable extends Migration
     {
         Schema::create('postulates', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('instructor_id')->unsigned();
-            $table->foreign('instructor_id')->references('id')->on('instructors');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('schedule_id')->unsigned();
             $table->foreign('schedule_id')->references('id')->on('schedules');
             $table->timestamps();
