@@ -21,8 +21,19 @@
           <!-- ================================================ -->
 
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
-          
+
           <li><a href="{{ url('admin/schedules') }}"><i class="fa fa-tag"></i> <span>Manage Schedule</span></a></li>
+
+          <!-- Lists -->
+          <li class="treeview">
+            <a href="#"><i class="fa fa-book"></i> <span>Listas</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <!-- Preregisters -->
+              <li><a href="{{ url('admin/preregisters') }}"><i class="fa fa-book"></i> <span>Preinscritos</span></a></li>
+              <li><a href="{{ url('admin/registers') }}"><i class="fa fa-book"></i> <span>Inscritos</span></a></li>
+
+            </ul>
+          </li>
 
           <!-- Courses -->
           <li class="treeview">
@@ -33,7 +44,7 @@
               <li><a href="{{ url('admin/categories') }}"><i class="fa fa-tag"></i> <span>Categories</span></a></li>
             </ul>
           </li>
-          
+
           <!-- Users, Roles Permissions -->
           <li class="treeview">
             <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -43,7 +54,7 @@
               <li><a href="{{ url('admin/permission') }}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
             </ul>
           </li>
-          
+
           <!-- Menu -->
           <li class="treeview">
             <a href="#"><i class="fa fa-file-text-o"></i> <span>Pages &amp; Menu</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -59,8 +70,8 @@
             <ul class="treeview-menu">
               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li>
             </ul>
-          </li>  
-          
+          </li>
+
           <!-- Settings -->
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/setting') }}"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
 

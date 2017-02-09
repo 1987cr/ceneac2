@@ -24,4 +24,8 @@ Route::group([
     CRUD::resource('categories', 'CategoryCrudController');
     CRUD::resource('courses', 'CourseCrudController');
     CRUD::resource('schedules', 'ScheduleCrudController');
+    CRUD::resource('preregisters', 'PreregisterCrudController');
+    CRUD::resource('registers', 'RegisterCrudController');
+
+
 });
