@@ -26,6 +26,8 @@ Route::group([
     CRUD::resource('schedules', 'ScheduleCrudController');
     CRUD::resource('preregisters', 'PreregisterCrudController');
     CRUD::resource('registers', 'RegisterCrudController');
-
+    CRUD::resource('instructors', 'InstructorCrudController');
+    CRUD::resource('postulates', 'PostulateCrudController');
+    CRUD::resource('interest_lists', 'PostulateCrudController');
 
 });

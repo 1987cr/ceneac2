@@ -31,6 +31,8 @@
               <!-- Preregisters -->
               <li><a href="{{ url('admin/preregisters') }}"><i class="fa fa-book"></i> <span>Preinscritos</span></a></li>
               <li><a href="{{ url('admin/registers') }}"><i class="fa fa-book"></i> <span>Inscritos</span></a></li>
+              <li><a href="{{ url('admin/interest_lists') }}"><i class="fa fa-book"></i> <span>Interesados</span></a></li>
+
 
             </ul>
           </li>
@@ -42,6 +44,16 @@
               <li><a href="{{ url('admin/courses') }}"><i class="fa fa-book"></i> <span>Manage Courses</span></a></li>
               <!-- Categories -->
               <li><a href="{{ url('admin/categories') }}"><i class="fa fa-tag"></i> <span>Categories</span></a></li>
+            </ul>
+          </li>
+
+          <!-- Users, Roles Permissions -->
+          <li class="treeview">
+            <a href="#"><i class="fa fa-group"></i> <span>Profesores & Postulaciones </span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="{{ url('admin/instructors') }}"><i class="fa fa-user"></i> <span>Profesores</span></a></li>
+              <li><a href="{{ url('admin/postulates') }}"><i class="fa fa-user"></i> <span>Postulaciones</span></a></li>
+
             </ul>
           </li>
 
